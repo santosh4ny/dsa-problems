@@ -61,13 +61,46 @@ Explanation 2:
     public static void main(String[] args) {
         int [] nums = {1, 0, 1, 0, 1};
         int b = 1;
+        System.out.println("Alternate array is : "+alternateSubArray(nums, b));
         int [] nums1 = {0, 0, 0, 1, 1, 0, 1};
         int b1 = 0;
+        System.out.println("Alternate array second is : "+alternateSubArray(nums1, b1));
     }
     private static List<Integer> alternateSubArray(int[] nums, int b){
         List<Integer> result = new ArrayList<>();
-
-
+        for(int i=b; i<nums.length-b; i++){
+            boolean left = checkForAlternate(nums, i, b, "left");
+            boolean right = checkForAlternate(nums, i, b, "right");
+            if(left && right){
+                result.add(i);
+            }
+        }
         return result;
+    }
+    private static boolean checkForAlternate(int[] nums, int index, int b, String direction){
+        boolean flag = true;
+        if(direction.equalsIgnoreCase("left")){
+            int curr = nums[index];
+            for(int j=index-1; j>= index -b; j--){
+                if(curr != nums[j]){
+                    curr = nums[j];
+                    continue;
+                }else{
+                    flag= false;
+                }
+            }
+        }else if(direction.equalsIgnoreCase("right")){
+            int curr = nums[index];
+            for(int j=index + 1; j < index + b + 1; j++){
+                if(curr != nums[j]){
+                    curr = nums[j];
+                    continue;
+                }else{
+                    flag = false;
+                }
+            }
+        }
+
+        return flag;
     }
 }
