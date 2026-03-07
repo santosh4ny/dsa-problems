@@ -3,7 +3,7 @@ I am going to create a multi-agent ai model.
 Each agent is a specialist in his domain.
 Agents
 - Agent1: will do static code analysis
-  - Agent2: will analyze java code (here general and company guidance like design practices we have to include for all the language.)
+  - Agent2: will analyze java code (here general and company guidance like design practices(Which is available in the excel, each sheet contains one language coding design practices, each sheet we have column (DP_RULE, DP_STATEMENT, DP_STATEMENT_DESCRIPTION)) we have to include for all the language.)
   - Agent3: will analyze C code
   - Agent4: will analyze C++ code
   - Agent5: will analyze python code
@@ -32,4 +32,7 @@ correct output format so this will be utilized in a dashboard for tracking purpo
 kindly provide details architecture(High level and low level), flow Diagram 
 and plan how i can acheive this. i have openai-4o-mini token with max token size is 272000.
 Note: in architecture provide details why, tradeoffs etc.
+
+provide complete working code based on architecture and flow diagram you can complete this in 1 or 2 sprint.
+
 
